@@ -1,0 +1,7 @@
+<div class="board">
+  <div *ngFor="let boardRow of board; let rowIndex = index;" class="board__row">
+    <div *ngFor="let boardCol of boardRow; let colIndex = index;" class="board__col">
+      <app-tile (onClick)="onTileClick(rowIndex, colIndex)" [value]="symbol[boardCol]"></app-tile>
+    </div>
+  </div>
+</div>
