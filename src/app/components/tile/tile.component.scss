@@ -7,18 +7,11 @@
   border: none;
   width: 100px;
   height: 100px;
+  padding: 0;
   font-size: 3.5rem;
   border-radius: 0.5rem;
   text-align: center;
   @include center;
   transition: all 0.3s ease-out;
-  transform: scale(1);
-
-  &:hover {
-    transform: scale(1.05);
-  }
-
-  &:active {
-    transform: scale(1.1);
-  }
+  user-select: none;
 }

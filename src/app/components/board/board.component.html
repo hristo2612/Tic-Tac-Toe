@@ -4,4 +4,5 @@
       <app-tile (onClick)="onTileClick(rowIndex, colIndex)" [value]="symbol[boardCol]"></app-tile>
     </div>
   </div>
+  <img *ngIf="randomGIF" [src]="randomGIF" alt="random thinking gif" class="board__gif" />
 </div>

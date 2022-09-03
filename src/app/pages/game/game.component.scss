@@ -7,11 +7,17 @@
     text-align: center;
   }
 
+  &__description {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-align: center;
+  }
+
   &__content {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 2rem;
+    margin-top: 4rem;
   }
 }

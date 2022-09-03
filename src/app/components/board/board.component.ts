@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-board',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./board.component.scss'],
 })
 export class BoardComponent implements OnInit {
+  @Output() onPlayerWon: EventEmitter<'X'|'O'> = new EventEmitter();
   symbol: any[] = [, 'X', 'O'];
   emptyArray: (size: number, fillValue: any) => any[] = (
     size: number,
@@ -13,10 +15,17 @@ export class BoardComponent implements OnInit {
   ): any[] => [...Array(size).fill(fillValue)];
   board: number[][] = this.emptyArray(3, this.emptyArray(3, 0));
   currentPlayer: number = 1;
+  // 5VWzikTONVTDeZD7saUk6gZfpXfzv6JL
+  randomGIF!: string;
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.http.get('https://api.giphy.com/v1/gifs/random?api_key=5VWzikTONVTDeZD7saUk6gZfpXfzv6JL&tag=think&limit=6&rating=r', { responseType: 'json' }).subscribe((res: any) => {
+      console.log(res);
+      this.randomGIF = `https://i.giphy.com/media/${res?.data?.id}/giphy.webp`;
+    });
+  }
 
   onTileClick(rowIndex: number, colIndex: number) {
     this.board = this.updatedBoard(this.board, rowIndex, colIndex);
