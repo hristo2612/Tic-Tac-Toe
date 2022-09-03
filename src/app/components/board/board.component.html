@@ -9,7 +9,6 @@
     <button class="board__button" (click)="onRestart()">New Game?</button>
   </div>
   <div *ngIf="thinking" class="board__over">
-    <p class="board__message">I'm thinking...</p>
     <img *ngIf="randomGIF" [src]="randomGIF" alt="random thinking gif" class="board__gif" />
   </div>
 </div>
