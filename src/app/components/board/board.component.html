@@ -1,14 +1,12 @@
 <div class="board">
-  <div *ngFor="let boardRow of board; let rowIndex = index;" class="board__row">
-    <div *ngFor="let boardCol of boardRow; let colIndex = index;" class="board__col">
-      <app-tile (onClick)="onTileClick(rowIndex, colIndex)" [value]="symbol[boardCol]"></app-tile>
-    </div>
+  <div *ngFor="let tile of board; let i = index;">
+    <app-tile (onClick)="onTileClick(i)" [value]="tile"></app-tile>
   </div>
   <div *ngIf="message" class="board__over">
     <p class="board__message">{{ message }}</p>
-    <button class="board__button" (click)="onRestart()">New Game?</button>
+    <button class="board__button" (click)="restartGame()">New Game?</button>
   </div>
-  <div *ngIf="thinking" class="board__over">
+  <div *ngIf="isThinking" class="board__over">
     <img *ngIf="randomGIF" [src]="randomGIF" alt="random thinking gif" class="board__gif" />
   </div>
 </div>

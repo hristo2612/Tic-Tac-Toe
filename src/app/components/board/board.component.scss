@@ -3,18 +3,9 @@
 
 .board {
   position: relative;
-  @include center;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-
-  &__row {
-    @include center;
-    gap: 1rem;
-  }
-
-  &__col {
-    @include center;
-  }
 
   &__over {
     position: absolute;

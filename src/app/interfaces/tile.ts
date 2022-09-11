@@ -1,1 +1,1 @@
-export type TileValue = 'X' | 'O';
+export type TileValue = 'X' | 'O' | null;
