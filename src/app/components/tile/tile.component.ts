@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
+import { TileValue } from 'src/app/interfaces/tile';
 
 @Component({
   selector: 'app-tile',
@@ -8,5 +9,5 @@ import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from 
 })
 export class TileComponent {
   @Output() onClick: EventEmitter<any> = new EventEmitter();
-  @Input() value!: 'X' | 'O';
+  @Input() value!: TileValue;
 }

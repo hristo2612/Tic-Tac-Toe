@@ -2,6 +2,34 @@
 @import 'scss/variables';
 @import 'scss/mixins';
 
+html {
+  font-size: 62.5%;
+
+  @include respond(small-phone, phone) {
+    font-size: 50%;
+  }
+
+  @include respond(tablet) {
+    font-size: 50%;
+  }
+
+  @include respond(desktop) {
+    font-size: 56.25%;
+  }
+
+  @include respond(large-desktop) {
+    font-size: 75%;
+  }
+
+  @include respond(xlarge-desktop) {
+    font-size: 80%;
+  }
+
+  @include respond(xxlarge-desktop) {
+    font-size: 85%;
+  }
+}
+
 .app {
   @include center;
   flex-direction: column;

@@ -1,14 +1,15 @@
 .game {
   &__title {
-    font-size: 3rem;
+    font-size: 5rem;
     font-weight: 400;
     word-spacing: 0;
     letter-spacing: 0;
     text-align: center;
+    margin-bottom: 0.5rem;
   }
 
   &__description {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 300;
     text-align: center;
   }
