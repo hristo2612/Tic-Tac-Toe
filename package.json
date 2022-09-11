@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:deploy": "ng build --configuration production --base-href /tic-tac-toe/",
+    "build:deploy": "ng build --configuration production --base-href /Tic-Tac-Toe/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
